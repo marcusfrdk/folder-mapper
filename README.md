@@ -38,4 +38,5 @@ main.py PATH
 ## Todo
 - [x] Add support for folders
 - [ ] Add support for files
+- [ ] Add support for excluding names using regex.
 - [ ] Find a simpler way of using the script.
