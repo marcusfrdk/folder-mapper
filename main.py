@@ -1,4 +1,4 @@
-import os, argparse, re, collections
+import os, argparse, re, collections, datetime
 excluded_dot_txt = os.path.abspath(os.path.join(os.path.dirname(__file__), "excluded.txt"))
 
 def syslog(msg:str, log:bool) -> None:
@@ -12,8 +12,6 @@ def excluded_files(arg:list, log:bool=False) -> list:
         content = f.read().split()
         f.close()
         syslog("Closed excluded.txt.", log)
-
-        print(content)
 
         if arg:
             syslog("Excluded files where provided, adding to list.", log)
@@ -50,6 +48,7 @@ def create_file(data:str, name:str, log:bool=False) -> bool:
 
 def mapper(path:str, files:bool=False, exclude:list=[], log:bool=False) -> str:
     data = ""
+    abs_path = os.path.abspath(path)
     basepath = path
 
     if os.path.exists(path):
@@ -59,26 +58,28 @@ def mapper(path:str, files:bool=False, exclude:list=[], log:bool=False) -> str:
 
             path = path.split(basepath)[1]
 
-            depth = collections.Counter(path)["/"]
+            depth = collections.Counter(path)["/"] - 1
+            tab_depth = depth + 1
+
             name = path.split("/")[-1]
             clean_name = path.split("/")[-1]
             syslog(f"Found {clean_name.upper()}.", log)
             
-            for tab in range(depth):
+            for tab in range(tab_depth):
                 name = "\t" + name
 
             name = f"[{depth}]" + name + "\n"
-            #name = name + "\n"
             data = data + name
-
 
             syslog(f"Successfully added {clean_name.upper()}!", log)
     else:
         syslog("Error adding path.", log)
 
+    data = data.split("\n", 1)[1]
+    data = f"Path: {abs_path}\nTime: {datetime.datetime.utcnow()}\n\n" + data
+
     if data:
         return data
-        #return data.split("\n", 1)[1]
     else:
         return ""
 
