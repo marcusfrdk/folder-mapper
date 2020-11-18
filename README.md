@@ -42,3 +42,4 @@ main.py PATH
 - [ ] Improve the logs
 - [ ] Better error handling
 - [ ] Search for file
+- [ ] Sorting results based on the folder etc.

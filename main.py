@@ -54,7 +54,7 @@ def mapper(path:str, files:bool=False, exclude:list=[], log:bool=False) -> str:
     if os.path.exists(path):
         excluded = excluded_files(exclude, log)
         for path, folder, file in os.walk(path):
-            folder[:] = [f for f in folder if f not in excluded]
+            folder[:] = [f for f in folder if f.lower() not in [l.lower() for l in excluded]] # Add regex support here
 
             path = path.split(basepath)[1]
 
@@ -75,11 +75,12 @@ def mapper(path:str, files:bool=False, exclude:list=[], log:bool=False) -> str:
 
             if files:
                 for file_name in file:
-                    file_row = file_name
-                    for x in range(tab_depth + 1):
-                        file_row = "\t" + file_row
-                    data = data + f"[{depth + 1}]" + file_row + "\n" 
-                    syslog(f"Successfully added {file_name.upper()}.", log)
+                    if file_name not in excluded:
+                        file_row = file_name
+                        for x in range(tab_depth + 1):
+                            file_row = "\t" + file_row
+                        data = data + f"[{depth + 1}]" + file_row + "\n" 
+                        syslog(f"Successfully added {file_name.upper()}.", log)
 
             syslog(f"Successfully added {clean_name.upper()}!", log)
     else:
