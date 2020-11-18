@@ -40,3 +40,5 @@ main.py PATH
 - [ ] Add support for files
 - [ ] Add support for excluding names using regex.
 - [ ] Find a simpler way of using the script.
+- [ ] Improve the logs and their effectiveness
+- [ ] Add more error handling
