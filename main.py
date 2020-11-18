@@ -63,13 +63,23 @@ def mapper(path:str, files:bool=False, exclude:list=[], log:bool=False) -> str:
 
             name = path.split("/")[-1]
             clean_name = path.split("/")[-1]
-            syslog(f"Found {clean_name.upper()}.", log)
+
+            if clean_name != "":
+                syslog(f"Found {clean_name.upper()}.", log)
             
             for tab in range(tab_depth):
                 name = "\t" + name
 
             name = f"[{depth}]" + name + "\n"
             data = data + name
+
+            if files:
+                for file_name in file:
+                    file_row = file_name
+                    for x in range(tab_depth + 1):
+                        file_row = "\t" + file_row
+                    data = data + f"[{depth + 1}]" + file_row + "\n" 
+                    syslog(f"Successfully added {file_name.upper()}.", log)
 
             syslog(f"Successfully added {clean_name.upper()}!", log)
     else:

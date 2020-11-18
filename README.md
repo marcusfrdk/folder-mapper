@@ -33,12 +33,12 @@ main.py PATH
 ## Info
 **Language:** Python
 **Version:** 3.9
-**Modules:** os, argparse, re and collections (python native)
+**Modules:** os, argparse, re, collections and datetime (python native)
 
 ## Todo
 - [x] Add support for folders
-- [ ] Add support for files
+- [x] Add support for files
 - [ ] Add support for excluding names using regex.
-- [ ] Find a simpler way of using the script.
-- [ ] Improve the logs and their effectiveness
-- [ ] Add more error handling
+- [ ] Improve the logs
+- [ ] Better error handling
+- [ ] Search for file
