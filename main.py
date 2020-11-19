@@ -1,4 +1,4 @@
-import os, argparse, re, collections, datetime
+import os, argparse, collections, datetime, sys, time
 excluded_dot_txt = os.path.abspath(os.path.join(os.path.dirname(__file__), "excluded.txt"))
 
 def syslog(msg:str, log:bool) -> None:
@@ -94,8 +94,6 @@ def mapper(path:str, files:bool=False, exclude:list=[], log:bool=False) -> str:
     else:
         return ""
 
-    
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Map a folder tree by specifying the path to the root of the tree. By default it only maps out folders, but can include files with the -if flag.")
     parser.add_argument("path", help="root of the tree you want to scan.")
@@ -105,5 +103,11 @@ if __name__ == "__main__":
     parser.add_argument("-l", "--log", help="output system logs.", action="store_true")
     args = parser.parse_args()
 
+    if args.include_files:
+        print("Scanning folders and files...")
+    else:
+        print("Scanning folders...")
+
     data = mapper(args.path, args.include_files, args.exclude, args.log)
+    print("Creating file...")
     create_file(data, args.output, args.log)
