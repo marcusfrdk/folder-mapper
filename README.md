@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/fBqCfuV.png"></p>
+<p align="center"><img src="https://i.imgur.com/4Gz581X.png"></p>
 
 <h1 align="center">Folder Mapper</h1>
 Map folders and files in a folder tree by specifying the path to the root. Simplify organization by knowing how it looks like.
