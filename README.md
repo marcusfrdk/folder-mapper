@@ -14,8 +14,9 @@ $ git clone https://github.com/marcusfrdk/folder-mapper.git
 You can also download the respository and then unzip it.
 <p align="center"><img src="https://i.imgur.com/c0TUWfM.png"></p>
 
-## Usage
+## How to use
 
+In order to use the function, simply run the following command and replacing PATH with the path to the folder you want to map.
 ```
 python3 main.py PATH
 ```
