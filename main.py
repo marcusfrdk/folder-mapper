@@ -80,7 +80,8 @@ def mapper(path:str, files:bool=False, exclude:list=[], log:bool=False) -> str:
                         for x in range(tab_depth + 1):
                             file_row = "\t" + file_row
                         data = data + f"[{depth + 1}]" + file_row + "\n" 
-                        syslog(f"Successfully added {file_name.upper()}.", log)
+                        if file_name:
+                            syslog(f"Successfully added {file_name.upper()}.", log)
 
             if clean_name:
                 syslog(f"Successfully added {clean_name.upper()}.", log)
