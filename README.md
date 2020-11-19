@@ -1,19 +1,24 @@
 # Folder Mapper
 Map folders and files in a folder tree by specifying the path to the root. Simplify organization by knowing how it looks like.
 
+## Installation
+To run the script, it only required the main.py script.
+
 ## Usage
 
-**How to use:**
 ```
 python3 main.py PATH
 ```
 
-**Explanations:**<br/>
-excluded.txt
-- Ignore folder or file in mapping by adding the name of the object to the list.
+## Files
+- main.py
+- - Main script file.
 
-output.txt
-- Output file of the script, this is where you will find the final result. Name can be changed using -o or --output flag.
+- excluded.txt
+- - Ignore folders or files by including them is this file, NOT LINE SENSITIVE. Can also be done using the -e, --exclude flag.
+
+- output.txt
+- - Output file, this is where the final result appears. The name can be changed using the -o, --output flag.
 
 ## Flags
 
