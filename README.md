@@ -1,7 +1,7 @@
 <p align="center"><img src="https://i.imgur.com/4Gz581X.png"></p>
 
 <h1 align="center">Folder Mapper</h1>
-Map folders and files in a folder tree by specifying the path to the root. Simplify organization by knowing how it looks like.
+Map folders and files in a folder tree by specifying the path to the root.
 
 ## Installation
 ### Clone
@@ -17,7 +17,7 @@ You can also download the respository and then unzip it.
 
 ## How to use
 
-In order to use the function, simply run the following command and replacing PATH with the path to the folder you want to map.
+Run the following command and replace PATH with the path to the folder you want to map.
 ```
 $ python3 main.py PATH
 ```
@@ -50,7 +50,7 @@ path                            the specified path to be mapped.
 ## Info
 **Language:** Python<br/>
 **Version:** 3.9<br/>
-**Modules:** Python native modules<br/>
+**Modules:** Python modules only<br/>
 
 ## Todo
 - [x] Folder support
