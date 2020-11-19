@@ -8,6 +8,7 @@ Map folders and files in a folder tree by specifying the path to the root. Simpl
 Clone the repository using the command:
 ```
 $ git clone https://github.com/marcusfrdk/folder-mapper.git
+$ cd folder-mapper
 ```
 
 ### Download
@@ -18,7 +19,7 @@ You can also download the respository and then unzip it.
 
 In order to use the function, simply run the following command and replacing PATH with the path to the folder you want to map.
 ```
-python3 main.py PATH
+$ python3 main.py PATH
 ```
 
 ## Files
