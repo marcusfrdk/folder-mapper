@@ -39,7 +39,7 @@ def create_file(data:str, name:str, log:bool=False) -> bool:
     
     if os.path.exists(name):
         syslog(f"{name} was successfully created.", log)
-        print(f"You will find the results in {name}.")
+        print(f"Output: {name}.")
         return True
     else:
         syslog(f"{name} could not be created, it was not found.", log)
@@ -82,7 +82,8 @@ def mapper(path:str, files:bool=False, exclude:list=[], log:bool=False) -> str:
                         data = data + f"[{depth + 1}]" + file_row + "\n" 
                         syslog(f"Successfully added {file_name.upper()}.", log)
 
-            syslog(f"Successfully added {clean_name.upper()}!", log)
+            if clean_name:
+                syslog(f"Successfully added {clean_name.upper()}.", log)
     else:
         syslog("Error adding path.", log)
 
