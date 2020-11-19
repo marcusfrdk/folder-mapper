@@ -11,19 +11,21 @@ python3 main.py PATH
 ```
 
 ## Files
-- main.py
-- - Main script file.
+**main.py**<br/>
+Main script file.
 
-- excluded.txt
-- - Ignore folders or files by including them is this file, NOT LINE SENSITIVE. Can also be done using the -e, --exclude flag.
+**excluded.txt**<br/>
+Ignore folders or files by including them is this file, NOT LINE SENSITIVE. Can also be done using the -e, --exclude flag.
 
-- output.txt
-- - Output file, this is where the final result appears. The name can be changed using the -o, --output flag.
+**output.txt**<br/>
+Output file, this is where the final result appears. The name can be changed using the -o, --output flag.
 
 ## Flags
 
-**Required:**<br/>
-main.py PATH
+**Required:**
+```
+path                            the specified path to be mapped.
+```
 
 **Optional:**
 ```
@@ -36,7 +38,7 @@ main.py PATH
 ## Info
 **Language:** Python<br/>
 **Version:** 3.9<br/>
-**Modules:** Native<br/>
+**Modules:** Python native modules<br/>
 
 ## Todo
 - [x] Folder support
