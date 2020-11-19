@@ -33,7 +33,7 @@ main.py PATH
 ## Info
 **Language:** Python
 **Version:** 3.9
-**Modules:** os, argparse, re, collections and datetime (python native)
+**Modules:** Native
 
 ## Todo
 - [x] Add support for folders
@@ -43,3 +43,4 @@ main.py PATH
 - [ ] Better error handling
 - [ ] Search for file
 - [ ] Sorting results based on the folder etc.
+- [ ] Add file/folder size

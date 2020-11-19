@@ -3,3 +3,6 @@ node_modules
 .vscode
 __pycache__
 .DS_Store
+lib
+bin
+._.DS_Store

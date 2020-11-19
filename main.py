@@ -1,11 +1,14 @@
 import os, argparse, collections, datetime, sys, time
 excluded_dot_txt = os.path.abspath(os.path.join(os.path.dirname(__file__), "excluded.txt"))
 
+# Syslogs will appear if the -l flag is provided
 def syslog(msg:str, log:bool) -> None:
     if log:
         print(msg)
 
+# Function error handling the existence of the exluded.txt file
 def excluded_files(arg:list, log:bool=False) -> list:
+    # If the file exists, use it
     if os.path.exists(excluded_dot_txt):
         syslog("Found excluded.txt, reading...", log)
         f = open('excluded.txt')
@@ -19,6 +22,7 @@ def excluded_files(arg:list, log:bool=False) -> list:
 
         return content
     else:
+        # When the exluded.txt file does not exist, return nothing
         return []
 
 def create_file(data:str, name:str, log:bool=False) -> bool:
@@ -50,6 +54,7 @@ def mapper(path:str, files:bool=False, exclude:list=[], log:bool=False) -> str:
     data = ""
     abs_path = os.path.abspath(path)
     basepath = path
+    excluded = []
 
     if os.path.exists(path):
         excluded = excluded_files(exclude, log)
@@ -89,7 +94,7 @@ def mapper(path:str, files:bool=False, exclude:list=[], log:bool=False) -> str:
         syslog("Error adding path.", log)
 
     data = data.split("\n", 1)[1]
-    data = f"Path: {abs_path}\nTime: {datetime.datetime.utcnow()}\n\n" + data
+    data = f"Path: {abs_path}\nTime: {datetime.datetime.utcnow()}\nExluded files: {excluded}\n\n" + data
 
     if data:
         return data
@@ -111,5 +116,7 @@ if __name__ == "__main__":
         print("Scanning folders...")
 
     data = mapper(args.path, args.include_files, args.exclude, args.log)
+
     print("Creating file...")
+    
     create_file(data, args.output, args.log)
