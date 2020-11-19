@@ -3,23 +3,21 @@ Map folders and files in a folder tree by specifying the path to the root. Simpl
 
 ## Usage
 
-**Use:**
+**How to use:**
 ```
 python3 main.py PATH
 ```
 
-**Explanations:**
+**Explanations:**<br/>
 excluded.txt
-: Ignore folder or file in mapping by adding the name of the object to the list.
+- Ignore folder or file in mapping by adding the name of the object to the list.
 
-output.txt[^1]
-: Output file of the script, this is where you will find the final result.
-
-[^1]: The name of the output file can be changes using the -o or --output flag.
+output.txt
+- Output file of the script, this is where you will find the final result. Name can be changed using -o or --output flag.
 
 ## Flags
 
-**Required:**
+**Required:**<br/>
 main.py PATH
 
 **Optional:**
@@ -31,16 +29,16 @@ main.py PATH
 ```
 
 ## Info
-**Language:** Python
-**Version:** 3.9
-**Modules:** Native
+**Language:** Python<br/>
+**Version:** 3.9<br/>
+**Modules:** Native<br/>
 
 ## Todo
-- [x] Add support for folders
-- [x] Add support for files
-- [ ] Add support for excluding names using regex.
-- [ ] Improve the logs
-- [ ] Better error handling
-- [ ] Search for file
-- [ ] Sorting results based on the folder etc.
-- [ ] Add file/folder size
+- [x] Folder support
+- [x] File support
+- [ ] Regex support
+- [ ] Improve documentation
+- [ ] Error handling
+- [ ] Search
+- [ ] Sorting
+- [ ] File- and foldersize
