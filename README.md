@@ -4,7 +4,15 @@
 Map folders and files in a folder tree by specifying the path to the root. Simplify organization by knowing how it looks like.
 
 ## Installation
-To run the script, it only required the main.py script.
+### Clone
+Clone the repository using the command:
+```
+$ git clone https://github.com/marcusfrdk/folder-mapper.git
+```
+
+### Download
+You can also download the respository and then unzip it.
+<p align="center"><img src="https://i.imgur.com/c0TUWfM.png"></p>
 
 ## Usage
 
